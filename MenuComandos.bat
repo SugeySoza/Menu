@@ -1,6 +1,14 @@
 @echo OFF
 :MENU
 cls
+COLOR 01
+ECHO =============== MENU COMANDOS GRUPO# 5 ====================
+ECHO 	  Esteban M. Alvarado Oporta 	  1-1993-0241
+ECHO 	  Yency D.  Amador Centeno	    1-1941-0197
+ECHO 	  Gael M. Mora Ramirez 		      4-0277-0788
+ECHO 	  Jose P. Sanchez Ramirez 	    1-1914-0155
+ECHO 	  Sugey R. Soza Bonilla 		    8-0129-0348
+ECHO ===========================================================
 ECHO.
 ECHO 1 - Mostrar la estructura de carpetas y archivos
 ECHO 2 - Forzar cierre
@@ -23,12 +31,14 @@ pause
 GOTO MENU
 
 : MOSTRAR_CARPETAS_ARCHIVOS   
-tree /F /A
+tree /F /A > lab_comandos.log
+start notepad.exe lab_comandos.log
 pause
 GOTO MENU
 
 :FORZAR_CIERRE
-taskkill /F /IM chrome.exe
+taskkill /F /IM chrome.exe 2>nul > lab_comandos.log
+start notepad.exe lab_comandos.log
 pause
 GOTO MENU
 
